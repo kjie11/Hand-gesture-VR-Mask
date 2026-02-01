@@ -18,6 +18,7 @@ public class TypewriterText : MonoBehaviour
     {
         textUI.text = "";
         StartCoroutine(TypeParagraphs());
+        
     }
 
     IEnumerator TypeParagraphs()
@@ -31,6 +32,9 @@ public class TypewriterText : MonoBehaviour
 
             textUI.text += "\n\n"; // 段落间空行
         }
+        yield return new WaitForSeconds(2f);
+
+        timer.instance.ChangeEvent();
     }
 
     IEnumerator TypeSingleParagraph(string paragraph)

@@ -150,14 +150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ea47b8bb397a708408bea7948e09e6a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -184,7 +184,7 @@ RectTransform:
   m_GameObject: {fileID: 9611302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 0.10000001}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 219534144}
@@ -192,7 +192,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 66.3}
-  m_SizeDelta: {x: 1024, y: 1536}
+  m_SizeDelta: {x: 1536, y: 1024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10228151 stripped
 MonoBehaviour:
@@ -1633,7 +1633,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: b623bfd7af01b2b4985c81b40e478a02, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3c2fe82f226475c468303dc3aa48747c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1736,6 +1736,7 @@ MonoBehaviour:
   AngryClip: {fileID: 8300000, guid: b623bfd7af01b2b4985c81b40e478a02, type: 3}
   HappyClip: {fileID: 8300000, guid: 4be8237508abb7649b1c2af334686483, type: 3}
   changeToHappy: 0
+  changeToAngry: 0
 --- !u!4 &422685268
 Transform:
   m_ObjectHideFlags: 0
@@ -2582,7 +2583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da728c687b0d52240a3d02b425e3161e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  rotationSpeed: 0.1
 --- !u!4 &669809505
 Transform:
   m_ObjectHideFlags: 0
@@ -3559,17 +3560,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 898103030}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1198918065}
+        m_TargetAssemblyTypeName: CheckTwoHands, Assembly-CSharp
+        m_MethodName: Success
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 669809503}
         m_TargetAssemblyTypeName: SkyboxSwitch, Assembly-CSharp
@@ -3579,18 +3580,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 537244138}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3610,7 +3599,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_MinimumHoldTime: 0.2
+  m_MinimumHoldTime: 1
   m_GestureDetectionInterval: 0.1
   m_StaticGestures: []
 --- !u!1 &898103030
@@ -3785,6 +3774,7 @@ MonoBehaviour:
   - 36
   EventsHasTriggered: 000000000000
   EventGameObjects:
+  - {fileID: 537244138}
   - {fileID: 898103030}
   - {fileID: 1815363636}
   - {fileID: 1201266882}
@@ -13183,18 +13173,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 898103030}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 669809503}
         m_TargetAssemblyTypeName: SkyboxSwitch, Assembly-CSharp
         m_MethodName: SwitchToCertainSkybox
@@ -13207,14 +13185,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 537244138}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1198918065}
+        m_TargetAssemblyTypeName: CheckTwoHands, Assembly-CSharp
+        m_MethodName: Success
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13234,7 +13212,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_MinimumHoldTime: 0.2
+  m_MinimumHoldTime: 1
   m_GestureDetectionInterval: 0.1
   m_StaticGestures: []
 --- !u!1 &1936433563

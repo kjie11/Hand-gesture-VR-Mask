@@ -97,18 +97,23 @@ public class ManualVignetteController : MonoBehaviour
     void OnComplete(int eventNum)
     {
         Debug.Log("in the onComplete");
-        if (eventNum <= 2)
+        if (eventNum == 0)
+        {
+            MusicFader.instance.changeToAngry = true;
+        }
+        if (eventNum <= 3)
         {
             DecreaseAperture();
             SkyboxSwitch.instance.SwitchToCertainSkybox(2);
             
         }
-        else if (eventNum >2)
+        else if (eventNum >3)
         {
            
              IncreaseAperture();
              SkyboxSwitch.instance.SwitchToCertainSkybox(5);
-             MusicFader.instance.ChangeMusicHappy();
+             if(eventNum == 4) MusicFader.instance.changeToHappy = true;
+             
         }
     }
     public void IncreaseAperture(float delta = 0.2f, float time = -1f)

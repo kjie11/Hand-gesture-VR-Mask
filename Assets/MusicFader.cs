@@ -3,13 +3,19 @@ using System.Collections;
 
 public class MusicFader : MonoBehaviour
 {
+    
+
+
     public static MusicFader instance;
     public AudioSource audioSource;
     public float fadeDuration = 1.5f;
     public AudioClip AngryClip;
     public AudioClip HappyClip;
-    public bool changeToHappy;
+    public bool changeToHappy;//If change music, change this bool
     bool isHappy;
+    public bool changeToAngry;
+    bool isAngry;
+
 
     void Awake()
     {
@@ -21,9 +27,24 @@ public class MusicFader : MonoBehaviour
         if (changeToHappy&&!isHappy)
         {
             ChangeMusicHappy();
-            
+            changeToHappy = false;
+            isHappy = true;
+            isAngry = false;
+        }
+
+        if (changeToAngry && !isAngry)
+        {
+            ChangeMusicAngry();
+            changeToAngry = false;
+            isAngry = true;
+            isHappy = false;  
         }
         
+    }
+    
+    public void ChangeMusicAngry()
+    {
+        StartCoroutine(FadeAndSwitch(AngryClip));
     }
    
     public void ChangeMusicHappy()
